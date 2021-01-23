@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5vh;
+  background: rgb(73, 79, 82);
+  color: white;
+}
+
+.nav-brand {
+  padding: 10px;
+}
+
+.nav-links {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
