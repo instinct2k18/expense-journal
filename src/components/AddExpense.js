@@ -1,15 +1,9 @@
 import { useState } from "react";
 
-function AddExpense() {
+function AddExpense({ addExpense }) {
   const [expenseDescription, setExpenseDescription] = useState("");
   const [expenseAmount, setExpenseAmount] = useState(0);
   const [bank, setBank] = useState("");
-
-  const [expenses, setExpenses] = useState([{}]);
-
-  const addExpense = (expenseDescription, expenseAmount, bank) => {
-    setExpenses([...expenses, { expenseDescription, expenseAmount, bank }]);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,23 +19,7 @@ function AddExpense() {
   return (
     <div>
       <h1>Add New Expense</h1>
-      <div>
-        <h3>Expense List</h3>
-        <ul>
-          {expenses &&
-            expenses.map((expense) => {
-              return (
-                <ul>
-                  <div>
-                    <p>{expense.expenseDescription}</p>
-                    <p>{expense.expenseAmount}</p>
-                    <p>{expense.bank}</p>
-                  </div>
-                </ul>
-              );
-            })}
-        </ul>
-      </div>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"

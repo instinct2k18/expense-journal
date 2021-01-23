@@ -37,22 +37,22 @@ function AddBanks() {
         </ul>
       </div>
       <form onSubmit={handleSubmit}>
-        <label>Add a Bank</label>
         <input
           type="text"
           id="bankName"
           value={bankName}
+          placeholder="Bank Name"
           required
           onChange={(e) => setBankName(e.target.value)}
         ></input>
         <br />
         <br />
-        <label>Add Balance</label>
         <input
           type="number"
           id="balance"
           value={bankBalance}
           required
+          placeholder="Bank Balance"
           onChange={(e) => setBankBalance(e.target.value)}
         ></input>
         <br />
