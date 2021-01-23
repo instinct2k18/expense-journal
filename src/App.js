@@ -9,12 +9,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
+  const [banks, setBanks] = useState([]);
 
   const addExpense = (expenseDescription, expenseAmount, bank) => {
     setExpenses([...expenses, { expenseDescription, expenseAmount, bank }]);
   };
-
-  const [banks, setBanks] = useState([]);
 
   const addBank = (bankName, balance) => {
     setBanks([...banks, { bankName, balance }]);
