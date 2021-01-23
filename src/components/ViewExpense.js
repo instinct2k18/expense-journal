@@ -1,4 +1,4 @@
-function ViewExpense({ expenses }) {
+function ViewExpense({ expenses, banks }) {
   return (
     <div>
       <h1>All Expenses </h1>
@@ -15,6 +15,22 @@ function ViewExpense({ expenses }) {
                     <p>{expense.bank}</p>
                   </div>
                 </ul>
+              );
+            })}
+        </ul>
+      </div>
+      <div>
+        <h3>Bank List</h3>
+        <ul>
+          {banks &&
+            banks.map((bank) => {
+              return (
+                <li key={bank.bankName}>
+                  <div>
+                    <h3>{bank.bankName}</h3>
+                    <p>{bank.balance}</p>
+                  </div>
+                </li>
               );
             })}
         </ul>

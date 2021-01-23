@@ -8,10 +8,16 @@ import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  const [expenses, setExpenses] = useState([{}]);
+  const [expenses, setExpenses] = useState([]);
 
   const addExpense = (expenseDescription, expenseAmount, bank) => {
     setExpenses([...expenses, { expenseDescription, expenseAmount, bank }]);
+  };
+
+  const [banks, setBanks] = useState([]);
+
+  const addBank = (bankName, balance) => {
+    setBanks([...banks, { bankName, balance }]);
   };
 
   return (
@@ -21,9 +27,13 @@ function App() {
         <Route
           path="/"
           exact
-          render={() => <ViewExpense expenses={expenses} />}
+          render={() => <ViewExpense expenses={expenses} banks={banks} />}
         />
-        <Route path="/addBanks" exact render={() => <AddBanks />} />
+        <Route
+          path="/addBanks"
+          exact
+          render={() => <AddBanks addBank={addBank} />}
+        />
         <Route
           path="/addExpense"
           exact
