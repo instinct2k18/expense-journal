@@ -12,9 +12,9 @@ nav {
 }
 
 .nav-links {
-  width: 20%;
+  width: 15%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style-type: none;
   padding: 10px;
   cursor: pointer;

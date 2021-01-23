@@ -15,9 +15,6 @@ function Nav() {
         <Link className="link" to="/addExpense">
           <li>Add Expense</li>
         </Link>
-        <Link className="link" to="/viewExpense">
-          <li>View Expense</li>
-        </Link>
       </ul>
     </nav>
   );

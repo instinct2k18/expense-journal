@@ -1,7 +1,7 @@
 function ViewExpense() {
   return (
     <div>
-      <h1>View All Expenses</h1>
+      <h1>All Expenses </h1>
     </div>
   );
 }

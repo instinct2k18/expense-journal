@@ -11,19 +11,12 @@ function App() {
     <Router>
       <Nav />
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/addBanks" exact component={AddBanks} />
-        <Route path="/addExpense" exact component={AddExpense} />
-        <Route path="/viewExpense" exact component={ViewExpense} />
+        <Route path="/" exact render={() => <ViewExpense />} />
+        <Route path="/addBanks" exact render={() => <AddBanks />} />
+        <Route path="/addExpense" exact render={() => <AddExpense />} />
       </Switch>
     </Router>
   );
 }
-
-const Home = () => (
-  <div>
-    <h1>Home Component</h1>
-  </div>
-);
 
 export default App;
