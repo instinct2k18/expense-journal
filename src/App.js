@@ -36,7 +36,7 @@ function App() {
         <Route
           path="/addExpense"
           exact
-          render={() => <AddExpense addExpense={addExpense} />}
+          render={() => <AddExpense addExpense={addExpense} banks={banks} />}
         />
       </Switch>
     </Router>

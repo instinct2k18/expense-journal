@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "react-bootstrap";
+import "./Navigation.css";
 
 function Nav() {
   return (
-    <Navbar bg="dark" expand="lg" variant="dark">
-      <Navbar.Brand href="#">Expense Journal</Navbar.Brand>
-      <Nav className="ml-auto"></Nav>
+    <nav>
+      <Link to="/" className="nav-brand link">
+        <h3>Expense Journal</h3>
+      </Link>
       <ul className="nav-links">
         <Link className="link" to="/addBanks">
           <li>Add Bank</li>
@@ -14,7 +15,7 @@ function Nav() {
           <li>Add Expense</li>
         </Link>
       </ul>
-    </Navbar>
+    </nav>
   );
 }
 

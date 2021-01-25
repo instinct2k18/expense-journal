@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddExpense({ addExpense }) {
+function AddExpense({ addExpense, banks }) {
   const [expenseDescription, setExpenseDescription] = useState("");
   const [expenseAmount, setExpenseAmount] = useState(0);
   const [bank, setBank] = useState("");
@@ -46,9 +46,13 @@ function AddExpense({ addExpense }) {
           onChange={(e) => setBank(e.target.value)}
         >
           <option value="default">Select a Bank</option>
-          <option value="Citi">Citi Bank</option>
-          <option value="ICICI">ICICI Bank</option>
-          <option value="SBI">State Bank of India</option>
+          {banks.map((bank) => {
+            return (
+              <option key={bank.bankName} value={bank.bankName}>
+                {bank.bankName}
+              </option>
+            );
+          })}
         </select>
         <br />
         <br />
