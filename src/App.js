@@ -19,6 +19,16 @@ function App() {
     setBanks([...banks, { bankName, balance }]);
   };
 
+  const updateBalance = (amount, bank) => {
+    console.log("Data ", amount, bank);
+    let index = banks.findIndex((currentBank) => currentBank.bankName === bank);
+    console.log(index);
+    let newBanks = [...banks];
+    newBanks[index].balance = newBanks[index].balance - amount;
+
+    setBanks(newBanks);
+  };
+
   return (
     <Router>
       <Nav />
@@ -36,7 +46,13 @@ function App() {
         <Route
           path="/addExpense"
           exact
-          render={() => <AddExpense addExpense={addExpense} banks={banks} />}
+          render={() => (
+            <AddExpense
+              addExpense={addExpense}
+              banks={banks}
+              updateBalance={updateBalance}
+            />
+          )}
         />
       </Switch>
     </Router>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddExpense({ addExpense, banks }) {
+function AddExpense({ addExpense, banks, updateBalance }) {
   const [expenseDescription, setExpenseDescription] = useState("");
   const [expenseAmount, setExpenseAmount] = useState(0);
   const [bank, setBank] = useState("");
@@ -11,6 +11,7 @@ function AddExpense({ addExpense, banks }) {
       `Expense Added successfully! ${bank}, ${expenseDescription}, ${expenseAmount}`
     );
     addExpense(expenseDescription, expenseAmount, bank);
+    updateBalance(expenseAmount, bank);
     setBank("default");
     setExpenseAmount("");
     setExpenseDescription("");
