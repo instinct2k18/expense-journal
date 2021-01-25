@@ -1,7 +1,24 @@
+import "./ViewExpense.css";
+
 function ViewExpense({ expenses, banks }) {
   return (
     <div>
-      <h1>All Expenses </h1>
+      <div>
+        <h3>Bank List</h3>
+        <ul>
+          {banks &&
+            banks.map((bank) => {
+              return (
+                <li key={bank.bankName}>
+                  <div>
+                    <h3>{bank.bankName}</h3>
+                    <p>{bank.balance}</p>
+                  </div>
+                </li>
+              );
+            })}
+        </ul>
+      </div>
       <div>
         <h3>Expense List</h3>
         <ul>
@@ -15,22 +32,6 @@ function ViewExpense({ expenses, banks }) {
                     <p>{expense.bank}</p>
                   </div>
                 </ul>
-              );
-            })}
-        </ul>
-      </div>
-      <div>
-        <h3>Bank List</h3>
-        <ul>
-          {banks &&
-            banks.map((bank) => {
-              return (
-                <li key={bank.bankName}>
-                  <div>
-                    <h3>{bank.bankName}</h3>
-                    <p>{bank.balance}</p>
-                  </div>
-                </li>
               );
             })}
         </ul>

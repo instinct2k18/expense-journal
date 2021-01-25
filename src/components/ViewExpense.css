@@ -1,0 +1,10 @@
+.bank-grid {
+  padding: 3%;
+}
+
+.bank-cards {
+  width: 20%;
+  display: flex;
+  list-style-type: none;
+  border: 1px solid black;
+}
